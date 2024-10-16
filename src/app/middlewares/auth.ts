@@ -21,7 +21,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
     try {
       decoded = jwt.verify(
         token,
-        config.jwt_access_secret as string
+        config.jwt_access_secret as string,
       ) as JwtPayload;
     } catch (error) {
       throw new AppError(httpStatus.UNAUTHORIZED, "Unauthorized");
@@ -54,7 +54,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
       user?.passwordChangedAt &&
       User.isJWTIssuedBeforePasswordChanged(
         user?.passwordChangedAt,
-        iat as number
+        iat as number,
       )
     ) {
       throw new AppError(httpStatus.UNAUTHORIZED, "You are not authorized !");

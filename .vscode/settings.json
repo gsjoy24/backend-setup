@@ -1,0 +1,42 @@
+{
+  // Force Prettier to follow the same rule for everyone in the workspace
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.printWidth": 120,
+  "prettier.useTabs": true,
+  "prettier.tabWidth": 2,
+  "prettier.withNodeModules": true,
+  "prettier.jsxSingleQuote": true,
+
+  // Disable overrides from other users in the team
+  "editor.formatOnType": false, // Prevent formatting on type from others' settings
+  "editor.formatOnPaste": false, // Prevent formatting on paste
+
+  // Linting and auto-fix rules
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // ESLint (optional, for strict code linting)
+  "eslint.enable": true,
+  "eslint.alwaysShowStatus": true,
+
+  // Git settings to auto-fetch changes without conflict
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // Prevent random auto-saving behavior that could interfere
+  "files.autoSave": "onWindowChange",
+
+  // Recommend extensions for formatting and linting to the team
+  "extensions.json": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}
